@@ -331,7 +331,8 @@ int main(int argc, char **argv)
     gtcache_set(td[1].key, td[1].data, td[1].size);
     cnt += testAssert("Test 17c: item added again - larger size", gtcache_memused() == td[1].size);
     
-    td[1].size = td[1].size / 2;
+    //changed the divide by 2 to divive by 4, since we already doubled its size in the previous test -- ShawnH
+    td[1].size = td[1].size / 4;
     gtcache_set(td[1].key, td[1].data, td[1].size);
     cnt += testAssert("Test 17d: item added again - smaller size", gtcache_memused() == td[1].size);
     
